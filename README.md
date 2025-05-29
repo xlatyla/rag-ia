@@ -3,6 +3,7 @@ Sistema de recuperación aumentada por generación (RAG) para documentos PDF con
 
 ## 🎥 Video DEMO (POC)
 
+[Ver video DEMO](./yes.mp4)
 
 
 ## ⚙️ Configuración
