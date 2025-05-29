@@ -1,6 +1,4 @@
 # 🤖 Sistema RAG con FastAPI, Ollama y PostgreSQL
-Sistema de recuperación aumentada por generación (RAG) para documentos PDF con API REST
-# 🤖 Sistema RAG con FastAPI, Ollama y PostgreSQL
 
 Sistema de Recuperación Aumentada por Generación (RAG) para documentos PDF con API REST
 
@@ -60,12 +58,7 @@ POST /upload-document/: Subir documentos PDF
 curl -X POST -F "file=@documento.pdf" http://localhost:8017/upload-document/
 POST /ask: Hacer preguntas sobre los documentos
 
-
 curl -X POST -H "Content-Type: application/json" -d '{"question":"¿Cuál es el tema principal?"}' http://localhost:8017/ask
-
-## 🏗️ Arquitectura
-Diagram
-Code
 
 
 📂 Estructura del proyecto
