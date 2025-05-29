@@ -1,21 +1,36 @@
 # 🤖 Sistema RAG con FastAPI, Ollama y PostgreSQL
 Sistema de recuperación aumentada por generación (RAG) para documentos PDF con API REST
+# 🤖 Sistema RAG con FastAPI, Ollama y PostgreSQL
 
-## 🎥 Video DEMO (POC)
+Sistema de Recuperación Aumentada por Generación (RAG) para documentos PDF con API REST
 
-![Example:](./interface.png)
+![Interfaz de ejemplo](./interface.png)
 
+## 🚀 Características principales
+- **Procesamiento de documentos PDF**
+- **Embeddings locales** con modelo all-minilm
+- **Generación de respuestas** con Llama3
+- **Almacenamiento vectorial** en PostgreSQL con extensión pgvector
+- **API REST** con FastAPI
+- **Fácil configuración** e instalación
 
-## ⚙️ Configuración
-Requisitos previos
+## ⚙️ Requisitos previos
+
+### 📦 Software necesario
+- Python 3.8+
+- PostgreSQL 13+ con extensión pgvector
+- Ollama (para modelos de LLM)
+
+### 🔧 Instalación de dependencias
+
 
 # Instalar Ollama
 curl -fsSL https://ollama.com/install.sh | sh
 
-## Descargar modelos necesarios
+# Descargar modelos necesarios
 ollama pull all-minilm  # Para embeddings
 ollama pull llama3.2    # Para generación
-Instalación
+
 
 ## Clonar repositorio
 git clone https://github.com/tu-usuario/rag-system.git
