@@ -1,182 +1,61 @@
-<p align="center">
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" align="center" width="30%">
-</p>
-<p align="center"><h1 align="center">RAGDOCUMENTSPGVECTOR</h1></p>
-<p align="center">
-	<em><code>❯ REPLACE-ME</code></em>
-</p>
-<p align="center">
-	<img src="https://img.shields.io/github/license/xlatyla/ragDocumentsPGVector?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
-	<img src="https://img.shields.io/github/last-commit/xlatyla/ragDocumentsPGVector?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-	<img src="https://img.shields.io/github/languages/top/xlatyla/ragDocumentsPGVector?style=default&color=0080ff" alt="repo-top-language">
-	<img src="https://img.shields.io/github/languages/count/xlatyla/ragDocumentsPGVector?style=default&color=0080ff" alt="repo-language-count">
-</p>
-<p align="center"><!-- default option, no dependency badges. -->
-</p>
-<p align="center">
-	<!-- default option, no dependency badges. -->
-</p>
-<br>
+# 🤖 Sistema RAG con FastAPI, Ollama y PostgreSQL
+Sistema de recuperación aumentada por generación (RAG) para documentos PDF con API REST
 
-##  Table of Contents
-
-- [ Overview](#-overview)
-- [ Features](#-features)
-- [ Project Structure](#-project-structure)
-  - [ Project Index](#-project-index)
-- [ Getting Started](#-getting-started)
-  - [ Prerequisites](#-prerequisites)
-  - [ Installation](#-installation)
-  - [ Usage](#-usage)
-  - [ Testing](#-testing)
-- [ Project Roadmap](#-project-roadmap)
-- [ Contributing](#-contributing)
-- [ License](#-license)
-- [ Acknowledgments](#-acknowledgments)
-
----
-
-##  Overview
-
-<code>❯ REPLACE-ME</code>
-
----
-
-##  Features
-
-<code>❯ REPLACE-ME</code>
-
----
-
-##  Project Structure
-
-```sh
-└── ragDocumentsPGVector/
-    ├── agent.py
-    └── requirements.tct
-```
-
-
-###  Project Index
-<details open>
-	<summary><b><code>RAGDOCUMENTSPGVECTOR/</code></b></summary>
-	<details> <!-- __root__ Submodule -->
-		<summary><b>__root__</b></summary>
-		<blockquote>
-			<table>
-			<tr>
-				<td><b><a href='https://github.com/xlatyla/ragDocumentsPGVector/blob/master/requirements.tct'>requirements.tct</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			<tr>
-				<td><b><a href='https://github.com/xlatyla/ragDocumentsPGVector/blob/master/agent.py'>agent.py</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			</table>
-		</blockquote>
-	</details>
-</details>
-
----
-##  Getting Started
-
-###  Prerequisites
-
-Before getting started with ragDocumentsPGVector, ensure your runtime environment meets the following requirements:
-
-- **Programming Language:** Error detecting primary_language: {'tct': 1, 'py': 1}
-
-
-###  Installation
-
-Install ragDocumentsPGVector using one of the following methods:
-
-**Build from source:**
-
-1. Clone the ragDocumentsPGVector repository:
-```sh
-❯ git clone https://github.com/xlatyla/ragDocumentsPGVector
-```
-
-2. Navigate to the project directory:
-```sh
-❯ cd ragDocumentsPGVector
-```
-
-3. Install the project dependencies:
-
-echo 'INSERT-INSTALL-COMMAND-HERE'
+## 🎥 Video DEMO (POC)
 
 
 
-###  Usage
-Run ragDocumentsPGVector using the following command:
-echo 'INSERT-RUN-COMMAND-HERE'
+## ⚙️ Configuración
+Requisitos previos
 
-###  Testing
-Run the test suite using the following command:
-echo 'INSERT-TEST-COMMAND-HERE'
+# Instalar Ollama
+curl -fsSL https://ollama.com/install.sh | sh
 
----
-##  Project Roadmap
+## Descargar modelos necesarios
+ollama pull all-minilm  # Para embeddings
+ollama pull llama3.2    # Para generación
+Instalación
 
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
+## Clonar repositorio
+git clone https://github.com/tu-usuario/rag-system.git
+cd rag-system
 
----
+## Instalar dependencias
+pip install -r requirements.txt
 
-##  Contributing
+## 🛠️ Configuración
+Configurar PostgreSQL:
 
-- **💬 [Join the Discussions](https://github.com/xlatyla/ragDocumentsPGVector/discussions)**: Share your insights, provide feedback, or ask questions.
-- **🐛 [Report Issues](https://github.com/xlatyla/ragDocumentsPGVector/issues)**: Submit bugs found or log feature requests for the `ragDocumentsPGVector` project.
-- **💡 [Submit Pull Requests](https://github.com/xlatyla/ragDocumentsPGVector/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
+CREATE DATABASE rag_db;
+CREATE EXTENSION vector;
+Editar las credenciales en DB_URL si es necesario:
 
-<details closed>
-<summary>Contributing Guidelines</summary>
+DB_URL = 'postgresql+asyncpg://usuario:contraseña@localhost:5432/rag_db'
+Configurar el prompt del sistema en SYSTEM_PROMPT para ajustar el comportamiento del bot.
 
-1. **Fork the Repository**: Start by forking the project repository to your github account.
-2. **Clone Locally**: Clone the forked repository to your local machine using a git client.
-   ```sh
-   git clone https://github.com/xlatyla/ragDocumentsPGVector
-   ```
-3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
-   ```sh
-   git checkout -b new-feature-x
-   ```
-4. **Make Your Changes**: Develop and test your changes locally.
-5. **Commit Your Changes**: Commit with a clear message describing your updates.
-   ```sh
-   git commit -m 'Implemented new feature x.'
-   ```
-6. **Push to github**: Push the changes to your forked repository.
-   ```sh
-   git push origin new-feature-x
-   ```
-7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
-8. **Review**: Once your PR is reviewed and approved, it will be merged into the main branch. Congratulations on your contribution!
-</details>
+🚀 Cómo usar
+Iniciar el servidor:
 
-<details closed>
-<summary>Contributor Graph</summary>
-<br>
-<p align="left">
-   <a href="https://github.com{/xlatyla/ragDocumentsPGVector/}graphs/contributors">
-      <img src="https://contrib.rocks/image?repo=xlatyla/ragDocumentsPGVector">
-   </a>
-</p>
-</details>
+python3 agent.py
 
----
+## Endpoints disponibles:
+POST /upload-document/: Subir documentos PDF
 
-##  License
+curl -X POST -F "file=@documento.pdf" http://localhost:8017/upload-document/
+POST /ask: Hacer preguntas sobre los documentos
 
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
 
----
+curl -X POST -H "Content-Type: application/json" -d '{"question":"¿Cuál es el tema principal?"}' http://localhost:8017/ask
 
-##  Acknowledgments
+## 🏗️ Arquitectura
+Diagram
+Code
 
-- List any resources, contributors, inspiration, etc. here.
 
----
+📂 Estructura del proyecto
+bash
+.
+├── main.py               # Aplicación principal FastAPI
+├── README.md             # Este archivo
+├── requirements.txt      # Dependencias
+└── documentos/           # Carpeta para documentos subidos (opcional)
